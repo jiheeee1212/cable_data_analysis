@@ -1,50 +1,40 @@
-# 📊 LG HelloVision Customer Analysis
+# 케이블 데이터 고객 분석 프로젝트
 
-## 1. Project Overview
-본 프로젝트는 LG HelloVision 고객 데이터를 활용하여  
-고객 특성과 서비스 이용 행태 간의 관계를 탐색하고,  
-각 변수 간 통계적 특성을 분석하는 것을 목표로 한다.  
+## 1. 프로젝트 개요
+본 프로젝트는 케이블 데이터를 기반으로 한 **샘플 데이터**를 사용하여
+고객 행동 분석을 수행하고, 해지 고객의 특성 파악 및 인사이트 도출을 목표로 합니다.
 
+## 2. 프로젝트 목표
+- 고객 시청 로그와 VOD 콘텐츠 데이터를 결합한 분석 데이터셋 구축
+- 데이터 무결성 검증을 통한 분석 신뢰성 확보
+- 해지 고객과 유지 고객 간의 특성 차이 분석
+- 향후 해지 예측 모델링을 위한 기초 데이터 준비
 
-⚠️ 실제 데이터는 내부 전용이며, 깃허브에는 포함되지 않습니다.  
+## 3. 폴더 구조
 
-
-## 2. Project Structure
-lg_hellovision_customer_analysis/
-├─ data/                   # 내부용 데이터 폴더 (깃허브에는 업로드 X, .gitignore 처리)
-│   ├─ user_data.pkl
-│   └─ vod_data.pkl
-├─ notebooks/               
-│   ├─ 01_eda.ipynb       
-│   └─ 02_statistical_test.ipynb  
-├─ outputs/                  
-│   ├─ figures/              
-│   └─ tables/               
-├─ src/                      
-│   ├─ config.py              
-│   └─ stats_test.py         
-├─ .gitignore               
-└─ README.md                 
----
-
-## 3. Analysis Process
-
-### 3.1 Exploratory Data Analysis (EDA)
-- 데이터 구조 확인 및 변수 타입 점검  
-- 결측치 및 이상치 탐색  
-- 변수 분포 확인 (히스토그램, 박스플롯 등)  
-- 변수 간 관계 시각화 (scatter, heatmap 등)  
-
-### 3.2 Statistical Testing
-- **범주형 변수 간 관계:**  
-  - Chi-square test / 교차분석 → 범주형 변수끼리 독립성 확인
-- **수치형 변수 집단 비교:**  
-  - t-test / ANOVA / F-test → 집단별 평균 차이 확인
-  - 비정규 수치형 → Mann–Whitney, Kruskal–Wallis  
-- 유의수준 α = 0.05 기준으로 변수 간 통계적 관계 검정  
-
----
-
-## 4. Tech Stack
-- **언어:** Python  
-- **라이브러리:** Pandas, NumPy, Matplotlib, Seaborn, SciPy, Statsmodels  
+```text
+cable_data_analysis/
+├─ data/
+│  ├─ raw/             # 원본 데이터 (수정 금지)
+│  │  ├─ mart.csv
+│  │  ├─ log.pkl
+│  │
+│  ├─ interim/         # 전처리 중간 산출물
+│  └─ processed/       # 최종 분석용 데이터
+│
+├─ notebooks/
+│  └─ clean.ipynb      # EDA 및 전처리 실험용 노트북
+│
+├─ outputs/
+│  ├─ figures/         # 시각화 결과 저장
+│  └─ tables/          # 통계 결과, 요약 테이블
+│
+├─ src/
+│  ├─ load.py          # 데이터 로딩 함수
+│  ├─ clean.py         # 전처리 로직 (결측치, 형변환 등)
+│  ├─ schema.py        # 컬럼 스키마 및 타입 정의
+│  ├─ validate.py      # 데이터 무결성 검증
+│  └─ config.py        # 공통 설정 (경로, 상수 등)
+│
+├─ .gitignore
+└─ README.md
