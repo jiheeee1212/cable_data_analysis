@@ -1,5 +1,5 @@
 import pandas as pd
-from typing import List, Tuple
+
 
 MART_DROP_COLS = [
     'updated', 'use_fl', 'ver_major', 'ver_minor', 'vod_acq_tp_cd', 'wrtr_disp',
@@ -12,7 +12,7 @@ MART_DROP_COLS = [
     'is_hot_fl', 'is_new_fl', 'long_tail_fl',
      'provider', 'description',
     'studio', 'prvd_id','asset_5',"disp_rtm",'asset_id',
-    'super_asset_nm','super_asset_sq','epsd_nm','series_sq'
+    'super_asset_nm','super_asset_sq','epsd_nm','series_sq','lt_inclsn_fl'
 ]
 
 def drop_high_null_cols(df: pd.DataFrame, threshold: float = 90.0):
@@ -22,7 +22,7 @@ def drop_high_null_cols(df: pd.DataFrame, threshold: float = 90.0):
     df_cleaned = df.drop(columns=drop_cols)
     return df_cleaned, drop_cols
 
-def drop_unused_mart_cols(df: pd.DataFrame):
+def drop_mart_cols(df: pd.DataFrame):
     return df.drop(columns=MART_DROP_COLS, errors="ignore")
 
 def get_column_summary(df: pd.DataFrame):
@@ -139,5 +139,6 @@ LOG_DROP_COLS = [
    "asset_nm","CT_CL","genre_of_ct_cl","category"
 ]
 
-def drop_unused_log_cols(df: pd.DataFrame):
+def drop_log_cols(df: pd.DataFrame):
     return df.drop(columns=LOG_DROP_COLS, errors="ignore")
+

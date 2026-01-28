@@ -15,9 +15,9 @@
 ```text
 cable_data_analysis/
 ├─ data/
-│  ├─ raw/             # 원본 데이터 (수정 금지)
-│  │  ├─ mart.csv
-│  │  ├─ log.pkl
+│  ├─ raw/             
+│  │  
+│  │ 
 │  │
 │  ├─ interim/         # 전처리 중간 산출물
 │  └─ processed/       # 최종 분석용 데이터
@@ -30,11 +30,12 @@ cable_data_analysis/
 │  └─ tables/          # 통계 결과, 요약 테이블
 │
 ├─ src/
-│  ├─ load.py          # 데이터 로딩 함수
 │  ├─ clean.py         # 전처리 로직 (결측치, 형변환 등)
 │  ├─ schema.py        # 컬럼 스키마 및 타입 정의
 │  ├─ validate.py      # 데이터 무결성 검증
+|  ├─ encoder.py       # 인코딩 관련 함수
 │  └─ config.py        # 공통 설정 (경로, 상수 등)
+
 │
 ├─ .gitignore
 └─ README.md
