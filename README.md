@@ -23,7 +23,9 @@ cable_data_analysis/
 │  └─ processed/       # 최종 분석용 데이터
 │
 ├─ notebooks/
-│  └─ clean.ipynb      # EDA 및 전처리 실험용 노트북
+│  |  clean.ipynb      #  전처리 실험용
+|  └─ eda.ipynb        #  eda 실험용
+│
 │
 ├─ outputs/
 │  ├─ figures/         # 시각화 결과 저장
