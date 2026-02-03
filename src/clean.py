@@ -11,7 +11,7 @@ MART_DROP_COLS = [
     'img_base_dir', 'director', 'chapter',
     'is_hot_fl', 'is_new_fl', 'long_tail_fl',
      'provider', 'description',
-    'studio', 'prvd_id','asset_5',"disp_rtm",'asset_id',
+    'studio', 'prvd_id','asset_5','asset_id',
    'super_asset_sq','epsd_nm','series_sq','lt_inclsn_fl'
 ]
 
