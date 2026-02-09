@@ -11,7 +11,7 @@ MART_DROP_COLS = [
     'img_base_dir', 'director', 'chapter',
     'is_hot_fl', 'is_new_fl', 'long_tail_fl',
      'provider', 'description',
-    'studio', 'prvd_id','asset_5','asset_id',
+    'studio', 'prvd_id','asset_5','asset_id','ttl'
    'super_asset_sq','epsd_nm','series_sq','lt_inclsn_fl'
 ]
 
@@ -47,7 +47,7 @@ def clean_mart(df: pd.DataFrame):
         "actr_disp","asset_nm","asset_prod","category","created_by",
         "ct_cl","cts_id","eosd_no","genre","genre_of_ct_cl","publctn_rt",
         "screen_tp","studio_nm","super_asset_id","asset_5","epsd_no",
-        "epsd_id","full_asset_id","super_asset_nm","ttl"
+        "epsd_id","full_asset_id","super_asset_nm","ttl","disp_rtm"
     ]
 
     for col in date_cols:
